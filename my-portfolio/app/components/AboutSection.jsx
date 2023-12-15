@@ -5,6 +5,7 @@ import TabButton from "./TabButton";
 import AboutImage from "../../images/aboutImage.png";
 import UniversityPopup from "./UniversityPopup";
 
+
 const TAB_DATA = [
   {
     title: "Skills",
@@ -26,9 +27,9 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li onClick={() => setActiveUniversity("Sohar Internation School")}>Sohar International School</li>
         <li onClick={() => setActiveUniversity("Rutgers University")}>Rutgers University</li>
         <li onClick={() => setActiveUniversity("Union County College")}>Union County College</li>
+        <li onClick={() => setActiveUniversity("Sohar International School")}>Sohar International School</li>
       </ul>
     ),
   },
@@ -59,7 +60,14 @@ const TAB_DATA = [
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
   const [activeUniversity, setActiveUniversity] = useState(null);
+  //const [isPending, startTransition] = useTransition();
 
+  /*const handleTabChange = (id) => {
+    startTransition(() => {
+      setTab(id);
+    });
+  };*/
+  
   const handleTabChange = (id) => {
     setTab(id);
     // Close any open university popup when switching tabs
@@ -67,13 +75,6 @@ const AboutSection = () => {
   };
 
   const universitiesDetails = {
-    "Sohar International School": {
-      name: "Sohar International School",
-      programs: [
-        { title: "Bachelor's of Science in Computer Science", graduationDate: "Jan 2024" },
-        { title: "School of Arts and Science Honors Student" }
-      ]
-    },
     "Rutgers University": {
       name: "Rutgers University",
       programs: [
@@ -85,6 +86,14 @@ const AboutSection = () => {
       name: "Union County College",
       programs: [
         { title: "Associates of Science in Computer Science", graduationDate: "May 2021" },
+        { title: "American Honors student" },
+        { title: "Phi Theta Kappa - Iota Xi President", term: "2020 - 2021" }
+      ]
+    },
+    "Sohar International School": {
+      name: "Sohar International School",
+      programs: [
+        { title: "Cambridge International (A-Level)", graduationDate: "May 2018" },
         { title: "American Honors student" },
         { title: "Phi Theta Kappa - Iota Xi President", term: "2020 - 2021" }
       ]
@@ -149,7 +158,6 @@ const AboutSection = () => {
               TAB_DATA.find((t) => t.id === tab).content
             )}
           </div>
-
         </div>
       </div>
     </section>
