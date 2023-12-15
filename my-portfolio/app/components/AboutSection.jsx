@@ -60,7 +60,8 @@ const TAB_DATA = [
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
   const [activeUniversity, setActiveUniversity] = useState(null);
-  //const [isPending, startTransition] = useTransition();
+  const [isPending, startTransition] = useState(false);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   /*const handleTabChange = (id) => {
     startTransition(() => {
@@ -72,6 +73,11 @@ const AboutSection = () => {
     setTab(id);
     // Close any open university popup when switching tabs
     setActiveUniversity(null);
+    setIsPopupVisible(false);
+  };
+
+  const handlePopupVisibility = () => {
+    setIsPopupVisible(!isPopupVisible)
   };
 
   const universitiesDetails = {
@@ -149,7 +155,10 @@ const AboutSection = () => {
             {tab === "education" ? (
               <ul className="list-disc pl-2">
                 {Object.keys(universitiesDetails).map((universityName) => (
-                  <li key={universityName} onClick={() => setActiveUniversity(universityName)}>
+                  <li key={universityName} onClick={() => {
+                    setActiveUniversity(universityName);
+                    handlePopupVisibility();
+                  }}>
                     {universityName}
                   </li>
                 ))}
@@ -158,6 +167,9 @@ const AboutSection = () => {
               TAB_DATA.find((t) => t.id === tab).content
             )}
           </div>
+          {activeUniversity && isPopupVisible && (
+          <UniversityPopup universityDetails={universitiesDetails[activeUniversity]} closePopup={handlePopupVisibility} />
+          )}
         </div>
       </div>
     </section>
