@@ -1,7 +1,10 @@
 import React from 'react';
 
 const UniversityPopup = ({ university, onClose }) => {
-  return (
+    if (!university) return null;
+
+
+    return (
     <div className="university-popup bg-white p-4 rounded-lg shadow-lg">
       <h3 className="text-2xl font-bold mb-2">{university.name}</h3>
       <ul>
@@ -18,6 +21,10 @@ const UniversityPopup = ({ university, onClose }) => {
       </button>
     </div>
   );
+};
+
+UniversityPopup.defaultProps = {
+    university: { name: '', programs: [] }
 };
 
 export default UniversityPopup;

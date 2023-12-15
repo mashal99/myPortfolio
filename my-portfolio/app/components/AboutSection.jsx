@@ -40,6 +40,9 @@ const TAB_DATA = [
       <ul className="list-disc pl-2">
         <li>Certified PEGA System Architect </li>
         <li>CS50: Intro to Computer Science</li>
+        <li>Certified Apple Technician</li>
+        <li>Completed Jamf 100 Course and Exam</li>
+        <li>BMC Certified Associate: Helix ITSM 19.x</li>
       </ul>
     ),
   },
@@ -60,14 +63,8 @@ const TAB_DATA = [
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
   const [activeUniversity, setActiveUniversity] = useState(null);
-  const [isPending, startTransition] = useState(false);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
-  /*const handleTabChange = (id) => {
-    startTransition(() => {
-      setTab(id);
-    });
-  };*/
   
   const handleTabChange = (id) => {
     setTab(id);
@@ -75,6 +72,11 @@ const AboutSection = () => {
     setActiveUniversity(null);
     setIsPopupVisible(false);
   };
+
+  const handleUniversityClick = (universityName) => {
+    console.log("Selected University: ", universityName); // Debugging line
+    setActiveUniversity(universityName);
+  }
 
   const handlePopupVisibility = () => {
     setIsPopupVisible(!isPopupVisible)
@@ -155,10 +157,7 @@ const AboutSection = () => {
             {tab === "education" ? (
               <ul className="list-disc pl-2">
                 {Object.keys(universitiesDetails).map((universityName) => (
-                  <li key={universityName} onClick={() => {
-                    setActiveUniversity(universityName);
-                    handlePopupVisibility();
-                  }}>
+                  <li key={universityName} onClick={() => handleUniversityClick(universityName)}>
                     {universityName}
                   </li>
                 ))}
@@ -167,11 +166,11 @@ const AboutSection = () => {
               TAB_DATA.find((t) => t.id === tab).content
             )}
           </div>
-          {activeUniversity && isPopupVisible && (
-          <UniversityPopup universityDetails={universitiesDetails[activeUniversity]} closePopup={handlePopupVisibility} />
-          )}
         </div>
       </div>
+      {activeUniversity && isPopupVisible && (
+          <UniversityPopup universityDetails={universitiesDetails[activeUniversity]} closePopup={handlePopupVisibility} />
+          )}
     </section>
   );
 };
