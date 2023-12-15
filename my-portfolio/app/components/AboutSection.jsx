@@ -3,6 +3,7 @@ import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 import AboutImage from "../../images/aboutImage.png";
+import UniversityPopup from "./UniversityPopup";
 
 const TAB_DATA = [
   {
@@ -25,8 +26,9 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Rutgers University</li>
-        <li>Union County College</li>
+        <li onClick={() => setActiveUniversity("Sohar Internation School")}>Sohar International School</li>
+        <li onClick={() => setActiveUniversity("Rutgers University")}>Rutgers University</li>
+        <li onClick={() => setActiveUniversity("Union County College")}>Union County College</li>
       </ul>
     ),
   },
@@ -56,13 +58,39 @@ const TAB_DATA = [
 
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
-  const [isPending, startTransition] = useTransition();
+  const [activeUniversity, setActiveUniversity] = useState(null);
 
   const handleTabChange = (id) => {
-    startTransition(() => {
-      setTab(id);
-    });
+    setTab(id);
+    // Close any open university popup when switching tabs
+    setActiveUniversity(null);
   };
+
+  const universitiesDetails = {
+    "Sohar International School": {
+      name: "Sohar International School",
+      programs: [
+        { title: "Bachelor's of Science in Computer Science", graduationDate: "Jan 2024" },
+        { title: "School of Arts and Science Honors Student" }
+      ]
+    },
+    "Rutgers University": {
+      name: "Rutgers University",
+      programs: [
+        { title: "Bachelor's of Science in Computer Science", graduationDate: "Jan 2024" },
+        { title: "School of Arts and Science Honors Student" }
+      ]
+    },
+    "Union County College": {
+      name: "Union County College",
+      programs: [
+        { title: "Associates of Science in Computer Science", graduationDate: "May 2021" },
+        { title: "American Honors student" },
+        { title: "Phi Theta Kappa - Iota Xi President", term: "2020 - 2021" }
+      ]
+    }
+  };
+  
 
   return (
     <section className="text-white" id="about">
@@ -109,8 +137,19 @@ const AboutSection = () => {
             </TabButton>
           </div>
           <div className="mt-8">
-            {TAB_DATA.find((t) => t.id === tab).content}
+            {tab === "education" ? (
+              <ul className="list-disc pl-2">
+                {Object.keys(universitiesDetails).map((universityName) => (
+                  <li key={universityName} onClick={() => setActiveUniversity(universityName)}>
+                    {universityName}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              TAB_DATA.find((t) => t.id === tab).content
+            )}
           </div>
+
         </div>
       </div>
     </section>
