@@ -29,7 +29,7 @@ const TAB_DATA = [
       <ul className="list-disc pl-2">
         <li onClick={() => setActiveUniversity("Rutgers University")}>Rutgers University - B.S. in Computer Science </li>
         <li onClick={() => setActiveUniversity("Union County College")}>Union County College - A.S in Computer Science </li>
-        <li onClick={() => setActiveUniversity("Sohar International School")}>Sohar International School</li>
+        <li onClick={() => setActiveUniversity("Cambridge General Certificate of Secondary Education")}>Cambridge General Certificate of Secondary Education</li>
       </ul>
     ),
   },
@@ -109,12 +109,12 @@ const AboutSection = () => {
         { title: "Phi Theta Kappa - Iota Xi President", term: "2020 - 2021" }
       ]
     },
-    "Sohar International School": {
+    "Cambridge General Certificate of Secondary Education": {
       name: "Sohar International School",
       programs: [
-        { title: "Cambridge International (A-Level)", graduationDate: "May 2018" },
-        { title: "American Honors student" },
-        { title: "Phi Theta Kappa - Iota Xi President", term: "2020 - 2021" }
+        { title: "Sohar International School)", graduationDate: "May 2018" },
+        { title: "Founder of Musical Band (Six Strings)" },
+        { title: "Top Overall Academic" }
       ]
     }
   };
