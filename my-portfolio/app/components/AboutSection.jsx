@@ -27,8 +27,8 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li onClick={() => setActiveUniversity("Rutgers University")}>Rutgers University</li>
-        <li onClick={() => setActiveUniversity("Union County College")}>Union County College</li>
+        <li onClick={() => setActiveUniversity("Rutgers University")}>Rutgers University - B.S. in Computer Science </li>
+        <li onClick={() => setActiveUniversity("Union County College")}>Union County College - A.S in Computer Science </li>
         <li onClick={() => setActiveUniversity("Sohar International School")}>Sohar International School</li>
       </ul>
     ),
@@ -51,10 +51,21 @@ const TAB_DATA = [
     id: "experience",
     content: (
       <ul className="list-disc pl-2">
-        <li>Interpublic Group </li>
+        <li>Interpublic Group</li>
+        <ul><li>Desktop Engineering Intern - (Jun 2023 - Now) </li></ul>
         <li>Apple, Inc.</li>
+        <ul>
+          <il>Technical Expert - (Aug 2022 – Sep 2023)</il>
+        </ul>
         <li>New Jersey Courts</li>
+        <ul>
+          <li>Quality Testing Intern for System Architecture</li>
+          <li> - (May 2022 – Sep 2022)</li>
+        </ul>
         <li>Rutgers, The State University of New Jersey</li>
+        <ul>
+          <li>Technical Support Associate - (Sep 2021 – Sep 2022)</li>
+        </ul>
       </ul>
     ),
   },
@@ -83,14 +94,14 @@ const AboutSection = () => {
   };
 
   const universitiesDetails = {
-    "Rutgers University": {
+    "Rutgers University - B.S. in Computer Science": {
       name: "Rutgers University",
       programs: [
         { title: "Bachelor's of Science in Computer Science", graduationDate: "Jan 2024" },
         { title: "School of Arts and Science Honors Student" }
       ]
     },
-    "Union County College": {
+    "Union County College - A.S in Computer Science": {
       name: "Union County College",
       programs: [
         { title: "Associates of Science in Computer Science", graduationDate: "May 2021" },
