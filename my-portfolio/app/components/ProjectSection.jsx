@@ -13,7 +13,7 @@ const projectsData = [
     title: "Photo Gallery Android App",
     description: "Rutgers Software Methodology Project",
     image: AndroidImage,
-    tag: ["All", "AndroidStudio", "Java"],
+    tag: ["All", "AndroidStudio", "Java", "Android"],
     gitUrl: "https://github.com/mashal99/Android-Photos-App.git",
   },
   {
@@ -70,8 +70,8 @@ const ProjectsSection = () => {
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
+          name="Android"
+          isSelected={tag === "Android"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
