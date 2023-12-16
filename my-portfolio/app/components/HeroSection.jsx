@@ -39,7 +39,12 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          
+          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
+            Ready to code, create, and collaborate! As a software engineer with a flair for 
+            both web and mobile development, I am all about crafting user-centric experiences 
+            with a dash of creativity. Eager to bring my mix of skills and enthusiasm to your 
+            dynamic team. Looking forward to working together!
+          </p>
 
           <div>
             <Link
