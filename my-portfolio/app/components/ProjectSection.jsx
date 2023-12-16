@@ -3,31 +3,34 @@ import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
+import UCCFRFImage from "../../images/projects/UCCFRF.png";
+import AndroidImage from "../../images/projects/Android-App.png";
+import RoboticsImage from "../../images/projects/Robotics-Project.png"
 
 const projectsData = [
   {
     id: 1,
     title: "Photo Gallery Android App",
     description: "Rutgers Software Methodology Project",
-    image: "/images/projects/Android-App.png",
+    image: AndroidImage,
     tag: ["All", "AndroidStudio", "Java"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/mashal99/Android-Photos-App.git",
   },
   {
     id: 2,
     title: "UCC Faculty Record File",
     description: "Union College Published Research",
-    image: "/images/projects/2.png",
+    image: UCCFRFImage,
     tag: ["All", "Web", "Sql"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/mashal99/UCCFRF.git",
   },
   {
     id: 3,
     title: "Robotics Localization Project",
     description: "Intro to Robotics Project 3",
-    image: "/images/projects/Robotics-Project.png",
+    image: RoboticsImage,
     tag: ["All", "Python", "Robotics"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/mashal99/Robotics-Assignment-3.git",
   }
 ];
 
