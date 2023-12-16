@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import HeroImage from '../../images/imageHero.png'
+import HeroImage from "../../images/imageHero.png";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
