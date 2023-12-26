@@ -7,9 +7,9 @@ const resend = new Resend('re_R84ZnSfz_KkJ4NaWChxdkLPx71Zd3srzx'); // Replace wi
 export async function POST() {
     try {
         const data = await resend.emails.send({
-            from: 'Ahmed <mashala324@gmail.com>', 
+            from: 'Ahmed <newemail@ahmedmashaal.com>', 
             to: ['mashala324@gmail.com'], 
-            subject: "", 
+            subject: "New Email", 
             react:<>
                     <p>Email Body</p>
                 </>,
