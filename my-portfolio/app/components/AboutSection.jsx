@@ -27,7 +27,6 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li onClick={() => setActiveUniversity("Rutgers University")}>Rutgers University - B.S. in Computer Science </li>
         <li onClick={() => setActiveUniversity("Union County College")}>Union County College - A.S in Computer Science </li>
         <li onClick={() => setActiveUniversity("Cambridge General Certificate of Secondary Education")}>Cambridge General Certificate of Secondary Education</li>
       </ul>
@@ -94,13 +93,7 @@ const AboutSection = () => {
   };
 
   const universitiesDetails = {
-    "Rutgers University - B.S. in Computer Science": {
-      name: "Rutgers University",
-      programs: [
-        { title: "Bachelor's of Science in Computer Science", graduationDate: "Jan 2024" },
-        { title: "School of Arts and Science Honors Student" }
-      ]
-    },
+    
     "Union County College - A.S in Computer Science": {
       name: "Union County College",
       programs: [
