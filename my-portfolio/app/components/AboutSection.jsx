@@ -113,7 +113,7 @@ const AboutSection = () => {
       ]
     },
     "Cambridge General Certificate of Secondary Education": {
-      name: "ambridge General Certificate of Secondary Education",
+      name: "Cambridge General Certificate of Secondary Education",
       programs: [
         { title: "Sohar International School)", graduationDate: "May 2018" },
         { title: "Founder of Musical Band (Six Strings)" },
