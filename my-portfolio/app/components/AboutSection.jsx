@@ -96,7 +96,7 @@ const AboutSection = () => {
   const universitiesDetails = {
 
     "Rutgers University - B.S in Computer Science": {
-      degree: "Bachelor of Science",
+      name: "Rutgers University",
       programs: [
         { title: "Bachelor of Science in Computer Science", graduationDate: "January 2024" },
         { title: "Dean's List", terms: "Spring 2022 - Spring 2024" },
