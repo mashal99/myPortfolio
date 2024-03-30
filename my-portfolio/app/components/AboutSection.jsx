@@ -87,7 +87,9 @@ const AboutSection = () => {
   const handleUniversityClick = (universityName) => {
     console.log("Selected University: ", universityName); // Debugging line
     setActiveUniversity(universityName);
-  }
+    setIsPopupVisible(true);  // Ensure the popup is visible when a university is clicked
+};
+
 
   const handlePopupVisibility = () => {
     setIsPopupVisible(!isPopupVisible)
