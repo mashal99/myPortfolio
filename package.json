@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@heroicons/react": "^2.0.18",
-    "framer-motion": "^10.16.12",
-    "react-type-animation": "^3.2.0"
-  }
-}
