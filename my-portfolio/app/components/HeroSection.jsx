@@ -25,19 +25,20 @@ const HeroSection = () => {
               sequence={[
                 "Ahmed Mashaal",
                 1000,
-                "Software Engineer",
+                "Data Engineer",
                 1000,
-                "Web Developer",
+                "Backend Engineer",
                 1000,
-                "Mobile Developer",
+                "ETL Specialist",
                 1000,
-                "UI/UX Designer",
+                "Cloud Architect",
                 1000,
               ]}
               wrapper="span"
               speed={50}
               repeat={Infinity}
             />
+
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
             Ready to code, create, and collaborate! As a software engineer with a flair for 
